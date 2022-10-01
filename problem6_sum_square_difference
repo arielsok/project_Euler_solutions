@@ -7,9 +7,9 @@
 
 """
 ██████████████████████████████
-This function finds the difference between the sum of the squares of the first n natural numbers, n is the inputed number.
+This function finds the difference between the sum of the squares of the first n natural numbers and the square of the sum, n is the inputed number.
 :param n:   (int) a positive integer
-:output:    (int) the difference between the sum of the squares of the first n natural numbers
+:output:    (int) the difference between the sum of the squares of the first n natural numbers and the square of the sum
 """
 def sum_square_difference(n):
     return sum(range(1, n+1))**2 - sum([i**2 for i in range(1, n+1)])
