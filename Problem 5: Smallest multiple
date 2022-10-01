@@ -1,0 +1,38 @@
+"""
+█████ https://projecteuler.net/problem=5 █████
+█ 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+█ What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+"""
+
+import math
+
+
+
+"""
+██████████████████████████████
+This function finds the smallest positive number that is divisible by all numbers from 1 to n, where n is the inputed number.
+:param n:   (int) a positive integer
+:output:    (int) the smallest positive number that is divisible by all numbers from 1 to n
+"""
+def smallest_multiple(n):
+    result = 1
+    
+    for i in range(int(n/2)+1, n+1):
+        result = int(result * i / math.gcd(result, i))
+        
+    return result
+
+
+
+"""
+██████████████████████████████
+"""
+def main():
+    print(smallest_multiple(20))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
