@@ -1,0 +1,60 @@
+"""
+█████ https://projecteuler.net/problem=4 █████
+█ A palindromic number reads the same both ways.
+█ The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+█ Find the largest palindrome made from the product of two 3-digit numbers.
+"""
+
+
+
+"""
+██████████████████████████████
+This function checks if a number is a palindrome.
+:param n:   (int) a positive integer
+:output:    (bool) 'True' if the number is a palindrome, otherwise 'False'
+"""
+def is_palindrome(n):
+    str_num = str(n)
+    
+    for i in range(len(str_num)):
+        
+        if(str_num[i] != str_num[-i-1]):
+            return False
+    
+    return True
+
+
+"""
+██████████████████████████████
+This function finds the largest palindrome made from the product of two n-digit numbers, where n is the inputed number.
+:param n:   (int) a positive integer
+:output:    (int) the largest palindrome made from the product of two n-digit numbers
+"""
+def largest_palindrome_product(n):
+    
+    min_n_digit_num = 10 ** (n-1)
+    max_n_digit_num = 10 ** n - 1
+    max_result = 0
+    
+    for i in range(max_n_digit_num, min_n_digit_num+1, -1):
+        
+        for j in range(max_n_digit_num, min_n_digit_num+1, -1):
+            
+            if(i*j > max_result and is_palindrome(i*j)):
+                max_result = i*j
+                
+    return max_result
+
+
+"""
+██████████████████████████████
+"""
+def main():
+    print(largest_palindrome_product(3))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
