@@ -1,0 +1,53 @@
+"""
+█████ https://projecteuler.net/problem=3 █████
+█ The prime factors of 13195 are 5, 7, 13 and 29.
+█ What is the largest prime factor of the number 600851475143?
+"""
+
+import math
+
+
+
+"""
+██████████████████████████████
+This function checks if a number is a prime number.
+:param n:   (int) a positive integer
+:output:    (bool) 'True' if the number is a prime number, otherwise 'False'
+"""
+def is_prime(n):
+    
+    for i in range(2, int(math.sqrt(n))):
+        
+        if n%i==0:
+            
+            return False
+    
+    return True
+
+
+"""
+██████████████████████████████
+This function gets a number and returns it's largest prime factor.
+:param n:   (int) a positive integer
+:output:    (int) the number's largest prime factor
+"""
+def largest_prime_factor(n):
+    
+    for i in range(int(math.sqrt(n)), 2, -1):
+        
+        if n%i == 0 and is_prime(i):
+            return i
+
+
+"""
+██████████████████████████████
+"""
+def main():
+    print(largest_prime_factor(600851475143))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
