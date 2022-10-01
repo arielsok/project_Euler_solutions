@@ -8,7 +8,7 @@
 
 """
 ██████████████████████████████
-this function gets a number and returns the sum of the multiples of 3 or 5 between 1 and (the number -1).
+This function gets a number and returns the sum of the multiples of 3 or 5 between 1 and (the number -1).
 :param n:   (int) a positive integer
 :output:    (int) the sum of the multiples of 3 or 5 between 1 and (the number -1)
 """
