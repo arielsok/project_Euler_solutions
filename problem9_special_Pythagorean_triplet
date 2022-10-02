@@ -1,0 +1,41 @@
+"""
+█████ https://projecteuler.net/problem=9 █████
+█ a<b<c, a^2 + b^2 = c^2
+█ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+█ Find the product a*b*c.
+"""
+
+
+
+"""
+██████████████████████████████
+This function finds the Pythagorean triplet where a<b<c, a^2 + b^2 = c^2, a + b + c = inputed number.
+:param n:   (int) a positive integer
+:output:    (int) the product of the Pythagorean triplet where a<b<c, a^2+b^2 = c^2, a+b+c = inputed number, or 'None' if no such triplet can be found
+"""
+def special_pythagorean_triplet(n):
+    
+    for a in range(1, n+1):
+    
+        for b in range(a+1, n+1):
+            
+            c = n - a - b
+                
+            if(a + b + c == n and a**2 + b**2 == c**2):
+                return a*b*c
+    
+    return None
+
+
+"""
+██████████████████████████████
+"""
+def main():
+    print(special_pythagorean_triplet(1000))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
