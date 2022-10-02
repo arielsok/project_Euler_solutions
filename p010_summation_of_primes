@@ -1,0 +1,53 @@
+"""
+█████ https://projecteuler.net/problem=10 █████
+█ Find the sum of all the primes below two million.
+"""
+
+import math
+
+
+"""
+██████████████████████████████
+This function checks if a number is a prime number.
+:param n:   (int) a positive integer
+:output:    (bool) 'True' if the number is a prime number, otherwise 'False'
+"""
+def is_prime(n):
+    
+    for i in range(2, int(math.sqrt(n))+1):
+        
+        if n%i == 0:
+            return False
+    
+    return True
+    
+
+"""
+██████████████████████████████
+This function finds the sum of all the primes below the inputed number.
+:param n:   (int) a positive integer
+:output:    (int) the sum of all the primes below the inputed number
+"""
+def summation_of_primes(n):
+    primes_sum = 0
+
+    for i in range(2, n):
+        
+        if is_prime(i):
+            primes_sum += i
+            
+    return primes_sum
+            
+    
+"""
+██████████████████████████████
+"""
+def main():
+    print(summation_of_primes(2000000))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
