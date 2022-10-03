@@ -12,12 +12,30 @@ This function gets a number and returns the sum of the multiples of 3 or 5 betwe
 """
 def multiples_of_3_or_5(n):
     sum = 0
-    
-    for i in range(1, n):
-    
-        if i%3 == 0 or i%5 == 0:
+
+    for i in range(3, n, 3):
+        
+        if i%3 == 0:
             sum += i
             
+    for i in range(5, n, 5):
+        
+        if i%5 == 0:
+            sum += i
+            
+    for i in range(3*5, n, 3*5):
+        
+        if i%(3*5) == 0:
+            sum -= i
+    
+    """
+    ███ alternative solution: ███
+    
+    for i in range(1, n):
+        if i%3 == 0 or i%5 == 0:
+            sum += i
+    """
+    
     return sum
 
 
