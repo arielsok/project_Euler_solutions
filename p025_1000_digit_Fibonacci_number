@@ -1,0 +1,40 @@
+"""
+█████ https://projecteuler.net/problem=25 █████
+█ What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+"""
+
+
+"""
+██████████████████████████████
+This function gets a number and returns the index of the first term in the Fibonacci sequence to contain n digits, where n is the inputed number.
+:param n:   (int) a positive integer
+:output:    (int) the index of the first term in the Fibonacci sequence to contain n digits, where n is the inputed number
+"""
+def n_digit_fibonacci_number(n):
+    prev = 1
+    curr = 1
+    index = 2
+    
+    while True:
+        
+        if (len(str(curr)) >= n):
+            return index
+        
+        curr, prev = curr + prev, curr
+        index += 1
+    
+    return index
+
+
+"""
+██████████████████████████████
+"""
+def main():
+    print(n_digit_fibonacci_number(1000))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
