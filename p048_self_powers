@@ -1,0 +1,34 @@
+"""
+█████ https://projecteuler.net/problem=48 █████
+█ Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
+"""
+
+
+"""
+██████████████████████████████
+This function gets a number and returns the last 10 digits of the sum of the series 1^1 + 2^2 + 3^3 + ... + n^n, where n is the inputed number.
+:param n:   (int) a positive integer
+:output:    (int) the last 10 digits of the sum of the series 1^1 + 2^2 + 3^3 + ... + n^n, where n is the inputed number
+"""
+def self_powers(n):
+    last_10_digs = 0
+    
+    for i in range(1, n+1):
+        last_10_digs += i**i
+        last_10_digs %= 10**10
+    
+    return last_10_digs
+
+
+"""
+██████████████████████████████
+"""
+def main():
+    print(self_powers(1000))
+
+
+"""
+██████████████████████████████
+"""
+if __name__ == '__main__':
+    main()
